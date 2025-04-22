@@ -1,7 +1,7 @@
 {
-	"name": "Sample Theme",
+	"name": "Breath",
 	"version": "1.0.0",
-	"minAppVersion": "1.0.0",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md"
+	"minAppVersion": "1.8.9",
+	"author": "Gauthier Leclair",
+	"authorUrl": "https://github.com/Gauthier13"
 }

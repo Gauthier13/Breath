@@ -1,34 +1,403 @@
+/*
+PlayStation 1 Theme for Obsidian
+Inspired by the iconic colors of the PlayStation 1 console
+*/
+
+/* Removing border radius */
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+    --radius-s: 4px;
+    --radius-m: 6px;
+    --radius-l: 8px;
+    --input-radius: 4px;
+    --tab-radius-active: 4px;
+    --checkbox-radius: 3px;
+    --toggle-radius: 12px;
+    --toggle-thumb-radius: 10px;
+    --slider-thumb-radius: 8px;
 }
 
+/* Base font */
+body {
+  --font-editor-theme: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu, sans-serif;
+  --font-editor: var(--font-editor-override), var(--font-text-override), var(--font-editor-theme);
+  --font-text-theme: Helvetica, serif;
+}
+
+/* Main color palette for dark theme */
+.theme-dark {
+    /* Base colors inspired by PlayStation 1 */
+    --base-h: 240;
+    --base-s: 10%;
+    --base-l: 15%;
+    --accent-h: 230;
+    --accent-s: 70%;
+    --accent-l: 55%;
+    
+    /* Backgrounds - PlayStation dark gray */
+    --background-primary: #1f1f25;          /* PS1 console dark gray */
+    --background-primary-alt: #282832;      /* Slightly lighter */
+    --background-secondary: #1a1a20;        /* Darker */
+    --background-secondary-alt: #15151b;    /* Even darker */
+    
+    /* Interface colors */
+    --bg1: #1f1f25;                         /* Same as primary background */
+    --bg2: #1a1a20;                         /* Darker */
+    --bg3: hsla(240, 10%, 25%, 0.25);       /* Semi-transparent active background */
+    --ui1: #2d2d3a;                         /* Standard borders */
+    --ui2: #363645;                         /* Hover borders */
+    --ui3: #424256;                         /* Active borders */
+
+    /* Text - PlayStation light gray */
+    --text-normal: #cecece;                 /* Light gray for main text */
+    --text-muted: #9c9c9c;                  /* Medium gray */
+    --text-faint: #767676;                  /* Dark gray */
+    --text-on-accent: #ffffff;              /* White on accent */
+    
+    /* Heading colors - inspired by PlayStation buttons */
+    --text-title-h1: #d64e76;               /* Pink - Square button */
+    --text-title-h2: #4e7cc9;               /* Blue - X button */
+    --text-title-h3: #5fb25f;               /* Green - Triangle button */
+    --text-title-h4: #e86830;               /* Orange - Circle button */
+    --text-title-h5: #aeaeae;               /* Light gray - PlayStation gray */
+    --text-title-h6: #6772c9;               /* PlayStation blue-purple */
+    
+    /* Links and accents - PlayStation Pink */
+    --text-accent: #d64e76;                 /* PlayStation Pink */
+    --text-accent-hover: #e76389;           /* Lighter pink on hover */
+    --interactive-accent: #d64e76;          /* PlayStation Pink for interactive elements */
+    --interactive-accent-rgb: 214, 78, 118; /* RGB version of interactive-accent */
+    --interactive-accent-hover: #e76389;    /* Lighter pink on hover */
+    
+    /* Interaction colors */
+    --interactive-normal: #2d2d3a;          /* For normal interactive elements */
+    --interactive-hover: #363645;           /* For hovered interactive elements */
+    
+    /* Highlights and selections */
+    --text-highlight-bg: rgba(78, 124, 201, 0.25); /* Transparent blue */
+    --text-selection: rgba(78, 124, 201, 0.25);   /* Transparent blue */
+    
+    /* Other functional colors */
+    --background-modifier-border: #323245;        /* Borders */
+    --background-modifier-form-field: #2a2a36;    /* Form fields */
+    --background-modifier-form-field-highlighted: #33334a; /* Focused fields */
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);  /* Shadows */
+    --background-modifier-success: #5fb25f;       /* Success - Triangle button green */
+    --background-modifier-error: #d64e76;         /* Error - Square button pink */
+    --background-modifier-error-rgb: 214, 78, 118;/* RGB for error */
+    --background-modifier-error-hover: #e65c87;   /* Error on hover */
+    
+    /* Code */
+    --code-normal: #cecece;                       /* Normal code - light gray */
+    --code-background: #2a2a36;                   /* Code background */
+    
+    /* Scrolling */
+    --scrollbar-bg: #1f1f25;                      /* Scrollbar background */
+    --scrollbar-thumb-bg: #3d3d4d;                /* Scrollbar thumb */
+    
+    /* Special styles */
+    --italic-color: #a9bce8;                      /* Italic text - light blue */
+    --bold-color: #e0e0e0;                        /* Bold text - off-white */
+    --quote-opening-modifier: #4e7cc9;            /* Quote opening - PlayStation blue */
+    --checklist-done-color: #767676;              /* Completed checklist */
+    
+    /* Other visual elements */
+    --table-border-color: #323245;                /* Table borders */
+    --table-alternate-background: #282832;        /* Table alternate background */
+}
+
+/* No active tab indicators */
 .workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+    display: none;
 }
 
+/* SVG shapes with sharp angles - PlayStation style */
 svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
 }
 
-.menu {
-	padding: var(--size-2-1);
+/* Basic formatting */
+.theme-dark {
+    --h1-color: var(--text-title-h1);
+    --h2-color: var(--text-title-h2);
+    --h3-color: var(--text-title-h3);
+    --h4-color: var(--text-title-h4);
+    --h5-color: var(--text-title-h5);
+    --h6-color: var(--text-title-h6);
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+/* Link styles */
+a, .cm-hmd-internal-link {
+    color: var(--text-accent);
+    text-decoration: none;
 }
 
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+a:hover, .cm-hmd-internal-link:hover {
+    color: var(--text-accent-hover);
+    text-decoration: none;
+}
+
+/* Title bar */
+.titlebar {
+    background-color: var(--background-secondary-alt);
+}
+
+.titlebar-inner {
+    color: var(--text-normal);
+}
+
+/* Highlighted text styles */
+mark {
+    background-color: var(--text-highlight-bg);
+    color: var(--text-normal);
+}
+
+/* Selection styles */
+::selection {
+    background-color: var(--text-selection);
+}
+
+/* Code block styles */
+.HyperMD-codeblock-bg {
+    background-color: var(--code-background);
+}
+
+.HyperMD-codeblock {
+    line-height: 1.4em;
+    color: var(--code-normal);
+}
+
+.HyperMD-codeblock-begin {
+    border-top-left-radius: var(--radius-s);
+    border-top-right-radius: var(--radius-s);
+}
+
+.HyperMD-codeblock-end {
+    border-bottom-left-radius: var(--radius-s);
+    border-bottom-right-radius: var(--radius-s);
+}
+
+/* Table styles */
+th {
+    font-weight: 600;
+}
+
+thead {
+    border-bottom: 2px solid var(--background-modifier-border);
+}
+
+/* Navigation element styles */
+.nav-folder-title, .nav-file-title {
+    color: var(--text-muted);
+}
+
+.nav-folder-title:hover, .nav-file-title:hover {
+    color: var(--text-normal);
+    background-color: var(--interactive-hover);
+}
+
+.nav-file-title.is-active {
+    color: var(--text-accent);
+    background-color: var(--background-primary-alt);
+}
+
+/* Header styles */
+.cm-header-1, .markdown-preview-section h1 {
+    font-weight: 600;
+    font-size: 1.8em;
+    color: var(--h1-color);
+}
+
+.cm-header-2, .markdown-preview-section h2 {
+    font-weight: 600;
+    font-size: 1.6em;
+    color: var(--h2-color);
+}
+
+.cm-header-3, .markdown-preview-section h3 {
+    font-weight: 500;
+    font-size: 1.4em;
+    color: var(--h3-color);
+}
+
+.cm-header-4, .markdown-preview-section h4 {
+    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--h4-color);
+}
+
+.cm-header-5, .markdown-preview-section h5 {
+    font-weight: 500;
+    font-size: 1.1em;
+    color: var(--h5-color);
+}
+
+.cm-header-6, .markdown-preview-section h6 {
+    font-weight: 500;
+    font-size: 1em;
+    color: var(--h6-color);
+}
+
+/* Buttons */
+button {
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-s);
+    transition: background-color 0.2s ease;
+    padding: 5px 10px;
+}
+
+button:hover {
+    background-color: var(--interactive-hover);
+}
+
+/* Checkboxes */
+input[type=checkbox] {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--checkbox-radius);
+}
+
+input[type=checkbox]:checked {
+    background-color: var(--interactive-accent);
+    border-color: var(--interactive-accent);
+}
+
+/* Sidebar links */
+.side-dock-ribbon-tab:hover,
+.side-dock-ribbon-action:hover,
+.side-dock-ribbon-action.is-active:hover,
+.nav-action-button:hover,
+.side-dock-collapse-btn:hover {
+    color: var(--text-accent);
+}
+
+/* Text formatting */
+em {
+    color: var(--italic-color);
+}
+
+strong {
+    color: var(--bold-color);
+    font-weight: 600;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg);
+    border-radius: var(--radius-s);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--interactive-accent);
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 3px solid var(--quote-opening-modifier);
+    padding-left: 1em;
+    color: var(--text-muted);
+}
+
+/* Dropdown menus and popups */
+.menu, .dropdown, .popover, .suggestion-container {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    box-shadow: 0 2px 6px var(--background-modifier-box-shadow);
+}
+
+.suggestion-item.is-selected {
+    background-color: var(--interactive-normal);
+}
+
+/* Paragraph spacing */
+.markdown-rendered p {
+    margin-bottom: var(--p-spacing);
+}
+
+/* Heading spacing */
+.markdown-rendered h1, 
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+    margin-top: var(--heading-spacing);
+}
+
+/* Task colors */
+.task-list-item-checkbox {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--checkbox-radius);
+}
+
+.task-list-item.is-checked {
+    color: var(--checklist-done-color);
+    text-decoration: line-through;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-s);
+}
+
+/* Rounded edges for various containers */
+.modal, .prompt, input[type="text"], input[type="search"], input[type="email"], input[type="password"], textarea {
+    border-radius: var(--radius-s);
+}
+
+/* Style for inline code text */
+code {
+    background-color: var(--code-background);
+    color: var(--code-normal);
+    padding: 0.2em 0.4em;
+    border-radius: var(--radius-s);
+}
+
+/* Improved relationship lines for list points */
+.markdown-source-view.mod-cm6 .cm-indent::before,
+.markdown-rendered.show-indentation-guide li > ul::before,
+.markdown-rendered.show-indentation-guide li > ol::before {
+    position: absolute;
+    border-right: 1px solid var(--background-modifier-border);
+}
+
+/* Tab titles */
+.view-header-title {
+    color: var(--text-normal);
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* PlayStation specific additions */
+/* PlayStation logo - style for special blocks */
+.callout[data-callout="playstation"] {
+    --callout-color: var(--text-title-h1);
+    --callout-icon: playstation;
+    border-left: 4px solid var(--callout-color);
+    background-color: rgba(78, 124, 201, 0.1);
+}
+
+/* Button style - resembling PlayStation buttons */
+.clickable-icon {
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+/* Link style - "button" effect on hover */
+a:hover, .cm-hmd-internal-link:hover {
+    text-shadow: 0 0 3px rgba(78, 124, 201, 0.5);
 }
